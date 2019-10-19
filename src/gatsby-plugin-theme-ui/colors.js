@@ -1,6 +1,8 @@
+const black = `#333`
+const yellowish = `#fbfdf9`
+const yellow = `#f9e254`
 const purple60 = `#663399`
 const purple30 = `#D9BAE8`
-const grey90 = `#232129`
 const black80 = `#1B1F23`
 const white = `#fff`
 const lightWhite = `rgba(255, 255, 255, 0.86)`
@@ -9,13 +11,14 @@ const opaqueLightWhite = `hsla(0, 0%, 100%, 0.2)`
 const lightGray = `hsla(0, 0%, 0%, 0.2)`
 
 export default {
-  text: grey90,
-  background: white,
-  primary: purple60,
+  heading: black,
+  text: black,
+  background: yellowish,
+  backgroundSecondary: yellow,
+  primary: black,
   secondary: black80,
   muted: lightGray,
   highlight: opaqueLightYellow,
-  heading: grey90,
   prism: {
     background: `#011627`,
     comment: `#809393`,
@@ -34,7 +37,7 @@ export default {
   modes: {
     dark: {
       text: lightWhite,
-      background: grey90,
+      background: black,
       primary: purple30,
       secondary: lightWhite,
       muted: opaqueLightWhite,

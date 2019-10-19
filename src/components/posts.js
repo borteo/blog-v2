@@ -6,12 +6,13 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Footer from "../components/home-footer"
 
-const Posts = ({ location, posts, siteTitle, socialLinks }) => (
-  <Layout location={location} title={siteTitle}>
+const Posts = ({ location, posts, siteTitle, siteDescription, socialLinks }) => (
+  <Layout location={location} title={siteTitle} description={siteDescription}>
     <main>
       {posts.map(({ node }) => {
         const title = node.title || node.slug
         const keywords = node.keywords || []
+
         return (
           <Fragment key={node.slug}>
             <SEO title="Home" keywords={keywords} />
@@ -31,8 +32,7 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => (
                   {title}
                 </Styled.a>
               </Styled.h2>
-              <small>{node.date}</small>
-              <Styled.p>{node.excerpt}</Styled.p>
+              <Styled.p>{node.subtitle}</Styled.p>
             </div>
           </Fragment>
         )

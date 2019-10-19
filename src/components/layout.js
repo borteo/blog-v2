@@ -3,7 +3,7 @@ import { css, Styled } from "theme-ui"
 import Header from "./header"
 
 export default ({ children, ...props }) => (
-  <Styled.root>
+  <Styled.root css={css({m: -1})}>
     <Header {...props} />
     <div>
       <div

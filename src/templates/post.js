@@ -12,6 +12,7 @@ export const pageQuery = graphql`
     post: blogPost(id: { eq: $id }) {
       id
       title
+      subtitle
       date(formatString: "MMMM DD, YYYY")
       excerpt
       body
@@ -19,6 +20,7 @@ export const pageQuery = graphql`
     site: site {
       siteMetadata {
         title
+        description
       }
     }
   }

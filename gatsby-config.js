@@ -1,16 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: `Blog Title Placeholder`,
-    author: `Name Placeholder`,
-    description: `Description placeholder`,
+    title: `Borteo Blog`,
+    author: `Matt Borgato`,
+    description: `Il mondo visto dagli occhi di un dev che lavora in remoto`,
     social: [
       {
         name: `twitter`,
-        url: `https://twitter.com/gatsbyjs`,
+        url: `https://twitter.com/borteo`,
       },
       {
         name: `github`,
-        url: `https://github.com/gatsbyjs`,
+        url: `https://github.com/borteo`,
       },
     ],
   },
@@ -23,7 +23,6 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              // should this be configurable by the end-user?
               maxWidth: 1380,
               linkImagesToOriginal: false,
             },

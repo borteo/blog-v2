@@ -63,6 +63,9 @@ exports.sourceNodes = ({ actions, schema }) => {
         title: {
           type: `String!`,
         },
+        subtitle: {
+          type: `String!`,
+        },
         slug: {
           type: `String!`,
         },
@@ -97,6 +100,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       site {
         siteMetadata {
           title
+          description
           social {
             name
             url
@@ -113,6 +117,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             excerpt
             slug
             title
+            subtitle
             date(formatString: "MMMM DD, YYYY")
           }
         }
@@ -130,7 +135,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     site: { siteMetadata },
   } = result.data
   const posts = mdxPages.edges
-  const { title: siteTitle, social: socialLinks } = siteMetadata
+  const { title: siteTitle, social: socialLinks, description: siteDescription } = siteMetadata
 
   // Create a page for each Post
   posts.forEach(({ node: post }, index) => {
@@ -143,6 +148,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       context: {
         ...post,
         siteTitle,
+        siteDescription,
         socialLinks,
         previous,
         next,
@@ -157,6 +163,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     context: {
       posts,
       siteTitle,
+      siteDescription,
       socialLinks,
     },
   })
@@ -186,6 +193,7 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId }) => {
 
     const fieldData = {
       title: node.frontmatter.title,
+      subtitle: node.frontmatter.subtitle,
       tags: node.frontmatter.tags || [],
       slug,
       date: node.frontmatter.date,

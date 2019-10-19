@@ -1,5 +1,5 @@
 import "typeface-source-sans-pro"
-import "typeface-merriweather-sans"
+import "typeface-libre-baskerville"
 import gray from "gray-percentage"
 import {
   TABLET_MEDIA_QUERY,
@@ -11,7 +11,7 @@ import { toTheme } from "@theme-ui/typography"
 
 const theme = {
   title: "Parnassus",
-  baseFontSize: "17px",
+  baseFontSize: "18px",
   baseLineHeight: 1.82,
   scaleRatio: 2.25,
   googleFonts: [
@@ -20,12 +20,12 @@ const theme = {
       styles: ["800"],
     },
     {
-      name: "Merriweather",
+      name: "Libre Baskerville",
       styles: ["400", "400i", "700"],
     },
   ],
   headerFontFamily: ["Source Sans Pro", "sans-serif"],
-  bodyFontFamily: ["Merriweather", "sans-serif"],
+  bodyFontFamily: ["Libre Baskerville", "serif"],
   headerColor: "hsla(0,0%,0%,0.9)",
   bodyColor: "hsla(0,0%,0%,0.8)",
   headerWeight: 800,

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Fragment } from "react"
 import { Link } from "gatsby"
 import { css, useColorMode, Styled } from "theme-ui"
 import Switch from "./switch"
@@ -8,13 +8,29 @@ import moon from "../../assets/moon.png"
 
 const rootPath = `${__PATH_PREFIX__}/`
 
-const Title = ({ children, location }) => {
-  if (location.pathname === rootPath) {
-    return (
+const Divider = () => {
+  return (
+    <div style={{
+      width: '170px',
+      height: '7px',
+      background: '#333',
+      margin: '1.5em 0 1.75em 0'
+    }}/>  
+  )
+}
+
+const Title = ({ title, description, location }) => {
+  if (location.pathname !== rootPath) {
+    return null
+  }
+  return (
+    <Fragment>
       <Styled.h1
         css={css({
           my: 0,
-          fontSize: 4,
+          fontSize: [56, 102, 115],
+          textTransform: `uppercase`,
+          letterSpacing: `0.05em`
         })}
       >
         <Styled.a
@@ -26,32 +42,21 @@ const Title = ({ children, location }) => {
           }}
           to={`/`}
         >
-          {children}
+          {title}
         </Styled.a>
       </Styled.h1>
-    )
-  } else {
-    return (
-      <Styled.h3
-        as="p"
+      <Divider />
+      <Styled.h2
         css={css({
-          my: 0,
+          color: 'heading',
+          fontSize: [21, 35, 43]
         })}
       >
-        <Styled.a
-          as={Link}
-          css={css({
-            boxShadow: `none`,
-            textDecoration: `none`,
-            color: `primary`,
-          })}
-          to={`/`}
-        >
-          {children}
-        </Styled.a>
-      </Styled.h3>
-    )
-  }
+        {description}
+      </Styled.h2>
+    </Fragment>
+  )
+
 }
 
 const checkedIcon = (
@@ -82,7 +87,7 @@ const uncheckedIcon = (
   />
 )
 
-export default ({ children, title, ...props }) => {
+export default ({ children, title, description, ...props }) => {
   const [colorMode, setColorMode] = useColorMode()
   const isDark = colorMode === `dark`
   const toggleColorMode = e => {
@@ -90,7 +95,10 @@ export default ({ children, title, ...props }) => {
   }
 
   return (
-    <header>
+    <header css={css({
+      backgroundColor: `backgroundSecondary`,
+      py: 2
+    })}>
       <div
         css={css({
           maxWidth: `container`,
@@ -100,16 +108,16 @@ export default ({ children, title, ...props }) => {
         })}
       >
         <div
-          css={css({
-            display: `flex`,
-            justifyContent: `space-between`,
-            alignItems: `baseline`,
-            mb: 4,
-          })}
+          // css={css({
+          //   display: `flex`,
+          //   justifyContent: `space-between`,
+          //   alignItems: `baseline`,
+          //   mb: 4,
+          // })}
         >
-          <Title {...props}>{title}</Title>
+          <Title {...props} title={title} description={description} />
           {children}
-          <Switch
+          {/* <Switch
             aria-label="Toggle dark mode"
             css={css({
               bg: `black`,
@@ -118,9 +126,9 @@ export default ({ children, title, ...props }) => {
             uncheckedIcon={uncheckedIcon}
             checked={isDark}
             onChange={toggleColorMode}
-          />
+          /> */}
         </div>
-        {props.location.pathname === rootPath && <Bio />}
+        {/* {props.location.pathname === rootPath && <Bio />} */}
       </div>
     </header>
   )
