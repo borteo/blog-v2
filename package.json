@@ -1,22 +1,19 @@
 {
-  "name": "gatsby-theme-blog",
-  "version": "1.0.2",
-  "description": "A Gatsby theme for miscellaneous blogging with a dark/light mode",
+  "name": "blog-v2",
+  "version": "0.0.1",
+  "description": "Borteo Blog version 2",
   "main": "index.js",
   "keywords": [
     "gatsby",
     "gatsby-theme",
-    "gatsby-plugin",
     "react",
     "blog"
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby.git",
-    "directory": "themes/gatsby-theme-blog"
+    "url": "https://github.com/borteo/blog-v2.git"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby/tree/master/themes/gatsby-theme-blog#readme",
   "dependencies": {
     "@emotion/core": "^10.0.14",
     "@mdx-js/mdx": "^1.1.0",
