@@ -102,7 +102,7 @@ export default ({ children, title, description, ...props }) => {
       <div
         css={css({
           maxWidth: `container`,
-          mx: `auto`,
+          mx: `1em`,
           px: 3,
           pt: 4,
         })}

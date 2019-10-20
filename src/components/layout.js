@@ -9,7 +9,7 @@ export default ({ children, ...props }) => (
       <div
         css={css({
           maxWidth: `container`,
-          mx: `auto`,
+          mx: `1em`,
           px: 3,
           py: 4,
         })}
