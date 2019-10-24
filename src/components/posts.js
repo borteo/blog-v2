@@ -1,5 +1,5 @@
 import React, { Fragment } from "react"
-import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { Styled, css } from "theme-ui"
 
 import Layout from "../components/layout"
@@ -22,11 +22,11 @@ const Posts = ({ location, posts, siteTitle, siteDescription, socialLinks }) => 
                   mb: 1,
                 })}
               >
+
                 <Styled.a
-                  as={Link}
-                  css={{
-                    textDecoration: `none`,
-                  }}
+                  as={AniLink}
+                  fade
+                  duration={0.5} 
                   to={node.slug}
                 >
                   {title}

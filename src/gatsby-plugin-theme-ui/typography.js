@@ -7,7 +7,6 @@ import {
 } from "typography-breakpoint-constants"
 import verticalRhythm from "compass-vertical-rhythm"
 import { toTheme } from "@theme-ui/typography"
-// import parnassusTheme from 'typography-theme-parnassus'
 
 const theme = {
   title: "Parnassus",

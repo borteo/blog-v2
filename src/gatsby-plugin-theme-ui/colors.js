@@ -1,5 +1,5 @@
 const black = `#333`
-const yellowish = `#fbfdf9`
+const lightYellow = `#fbfdf9`
 const yellow = `#f9e254`
 const purple60 = `#663399`
 const purple30 = `#D9BAE8`
@@ -13,10 +13,11 @@ const lightGray = `hsla(0, 0%, 0%, 0.2)`
 export default {
   heading: black,
   text: black,
-  background: yellowish,
+  background: lightYellow,
   backgroundSecondary: yellow,
   primary: black,
   secondary: black80,
+  link: `rgba(249, 226, 84, .6)`,
   muted: lightGray,
   highlight: opaqueLightYellow,
   prism: {

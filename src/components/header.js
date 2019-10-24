@@ -1,5 +1,6 @@
 import React, { Fragment } from "react"
 import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { css, useColorMode, Styled } from "theme-ui"
 import Switch from "./switch"
 import Bio from "../components/bio"
@@ -21,7 +22,21 @@ const Divider = () => {
 
 const Title = ({ title, description, location }) => {
   if (location.pathname !== rootPath) {
-    return null
+    return (
+      <Styled.a
+        as={AniLink}
+        fade
+        duration={0.5} 
+      css={{
+        color: `inherit`,
+        boxShadow: `none`,
+        backgroundColor: `transparent`,
+      }}
+      to={`/`}
+      >
+        {title}
+      </Styled.a>
+    )
   }
   return (
     <Fragment>
@@ -30,7 +45,7 @@ const Title = ({ title, description, location }) => {
           my: 0,
           fontSize: [56, 102, 115],
           textTransform: `uppercase`,
-          letterSpacing: `0.05em`
+          letterSpacing: `0.05em`,
         })}
       >
         <Styled.a
@@ -38,7 +53,7 @@ const Title = ({ title, description, location }) => {
           css={{
             color: `inherit`,
             boxShadow: `none`,
-            textDecoration: `none`,
+            backgroundColor: `transparent`,
           }}
           to={`/`}
         >

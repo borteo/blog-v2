@@ -31,6 +31,9 @@ export default {
   // from typography overrideThemeStyles
   a: {
     color: `primary`,
+    backgroundColor: `link`,
+    textDecoration: `none`,
+    boxShadow: `5px 0 0 rgba(249, 226, 84, .6), -5px 0 0 rgba(249, 226, 84, .6)`,
   },
   hr: {
     borderColor: `muted`,
