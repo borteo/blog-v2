@@ -81,7 +81,8 @@ export default ({ children, title, description, ...props }) => {
   return (
     <header css={css({
       backgroundColor: `backgroundSecondary`,
-      py: 2
+      py: 2,
+      zIndex: `0`,
     })}>
       <div
         css={css({

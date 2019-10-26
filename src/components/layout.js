@@ -11,9 +11,19 @@ export default ({ children, ...props }) => (
         body: {
           margin: 0,
           padding: 0
+        },
+        ".gatsby-resp-image-background-image": {
+          position: `absolute !important`,
         }
       })}
     />
+    <div css={css({
+      width: `100%`,
+      position: `fixed`,
+      height: `20px`,
+      backgroundColor: `backgroundSecondary`,
+      zIndex: `-1`,
+    })}/>
     <Header {...props} />
     <div>
       <div

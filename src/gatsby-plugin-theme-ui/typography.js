@@ -1,5 +1,3 @@
-import "typeface-source-sans-pro"
-import "typeface-libre-baskerville"
 import gray from "gray-percentage"
 import {
   TABLET_MEDIA_QUERY,

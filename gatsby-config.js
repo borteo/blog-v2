@@ -23,8 +23,9 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1380,
+              maxWidth: 860,
               linkImagesToOriginal: false,
+              backgroundColor: '#f9e254',
             },
           },
           { resolve: `gatsby-remark-copy-linked-files` },
@@ -37,14 +38,14 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `content/posts`,
+        path: `${__dirname}/content/posts`,
         name: `content/posts`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `content/assets`,
+        path: `${__dirname}/content/assets`,
         name: `content/assets`,
       },
     },
@@ -55,5 +56,11 @@ module.exports = {
     `gatsby-plugin-emotion`,
     `gatsby-plugin-theme-ui`,
     `gatsby-plugin-transition-link`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-59222711-1 `,
+      },
+    },
   ]
 }
