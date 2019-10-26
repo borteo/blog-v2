@@ -1,5 +1,5 @@
 import React from "react"
-import { Styled, css } from "theme-ui"
+import { Styled } from "theme-ui"
 
 import PostFooter from "../components/post-footer"
 import Layout from "../components/layout"
