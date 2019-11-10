@@ -13,27 +13,63 @@ const Posts = ({ location, posts, siteTitle, siteDescription, socialLinks }) => 
         const title = node.title || node.slug
         const keywords = node.keywords || []
 
+        console.log('node', node)
+
         return (
           <Fragment key={node.slug}>
             <SEO title="Home" keywords={keywords} />
-            <div>
-              <Styled.h2
-                css={css({
-                  mb: 1,
-                })}
-              >
 
-                <Styled.a
-                  as={AniLink}
-                  fade
-                  duration={0.5} 
-                  to={node.slug}
+          <AniLink
+            fade
+            duration={0.5} 
+            to={node.slug}
+            css={css({textDecoration: `none`})}
+          >
+            <Styled.div css={css({
+              display: 'grid',
+              gridGap: 2,
+              // use arrays for mobile-first responsive styles
+              gridTemplateColumns: [
+                'auto',
+                '125px 80%',
+                '125px 100%',
+              ],
+              gridTemplateRows: ['160px', '200px'],
+            })}>
+              <figure
+                css={css({
+                  width: [`100%`, `125px`],
+                  height: [`200px`, `125px`],
+                  background: `url("${node.cover}") top left no-repeat`,
+                  backgroundPosition: `center`, 
+                  backgroundSize: `cover`,
+                  display: `inline-block`,
+                  margin: `0`,
+                })}
+              />
+              <article css={css({
+                  mt: 1,
+                  position: `relative`,
+              })}>
+                <Styled.h2
+                  css={css({
+                    mb: 1,
+                    fontSize: [25, 30, 35]
+                  })}
                 >
-                  {title}
-                </Styled.a>
-              </Styled.h2>
-              <Styled.p>{node.subtitle}</Styled.p>
-            </div>
+                  <Styled.a
+                    as={AniLink}
+                    fade
+                    duration={0.5} 
+                    to={node.slug}
+                  >
+                    {title}
+                  </Styled.a>
+                </Styled.h2>
+                <Styled.p css={css({color: 'secondary', fontSize: [17, 19, 20]})}>{node.subtitle}</Styled.p>
+              </article>
+            </Styled.div>
+            </AniLink>
           </Fragment>
         )
       })}

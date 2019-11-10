@@ -40,7 +40,7 @@ const Title = ({ title, description, location }) => {
       <Styled.h1
         css={css({
           my: 0,
-          fontSize: [56, 102, 115],
+          fontSize: [70, 102, 150],
           textTransform: `uppercase`,
           letterSpacing: `0.05em`,
         })}
@@ -61,7 +61,7 @@ const Title = ({ title, description, location }) => {
       <Styled.h2
         css={css({
           color: 'heading',
-          fontSize: [21, 35, 43]
+          fontSize: [25, 30, 43]
         })}
       >
         {description}
@@ -88,7 +88,7 @@ export default ({ children, title, description, ...props }) => {
         css={css({
           maxWidth: `container`,
           mx: `1em`,
-          px: 3,
+          px: [1, 3],
           pt: 4,
         })}
       >

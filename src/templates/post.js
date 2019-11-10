@@ -13,6 +13,7 @@ export const pageQuery = graphql`
       id
       title
       subtitle
+      cover
       date(formatString: "MMMM DD, YYYY")
       excerpt
       body

@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Borteo Blog`,
-    author: `Matt Borgato`,
-    description: `Il mondo visto dagli occhi di un dev che lavora in remoto`,
+    title: `Blogteo`,
+    author: `borteo`,
+    description: `Riflessioni di un programmatore che lavora in remoto`,
     social: [
       {
         name: `twitter`,

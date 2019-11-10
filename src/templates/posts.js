@@ -7,8 +7,6 @@ export default ({
   location,
 }) => (
 
-
-
   <Posts
     location={location}
     posts={posts}

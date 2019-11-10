@@ -66,6 +66,9 @@ exports.sourceNodes = ({ actions, schema }) => {
         subtitle: {
           type: `String!`,
         },
+        cover: {
+          type: `String`,
+        },
         slug: {
           type: `String!`,
         },
@@ -118,7 +121,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             slug
             title
             subtitle
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "MM-YYYY")
+            cover
           }
         }
       }
@@ -194,6 +198,7 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId }) => {
     const fieldData = {
       title: node.frontmatter.title,
       subtitle: node.frontmatter.subtitle,
+      cover: node.frontmatter.cover,
       tags: node.frontmatter.tags || [],
       slug,
       date: node.frontmatter.date,
