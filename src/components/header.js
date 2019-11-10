@@ -8,11 +8,15 @@ const rootPath = `${__PATH_PREFIX__}/`
 
 const Divider = () => {
   return (
-    <div style={{
+    <div css={{
       width: '170px',
       height: '7px',
       background: '#333',
-      margin: '1.5em 0 1.75em 0'
+      margin: '1.5em 0 1.75em 0',
+      transition: `width 0.25s linear`,
+      '&:hover': {
+        width: '301px',
+      }
     }}/>  
   )
 }

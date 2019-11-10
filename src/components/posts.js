@@ -40,13 +40,25 @@ const Posts = ({ location, posts, siteTitle, siteDescription, socialLinks }) => 
                 css={css({
                   width: [`100%`, `125px`],
                   height: [`200px`, `125px`],
+                  overflow: `hidden`,
+                  margin: `0`,
+                })}
+              > 
+              <Styled.div 
+                css={css({
+                  width: `100%`,
+                  height: `100%`,
                   background: `url("${node.cover}") top left no-repeat`,
                   backgroundPosition: `center`, 
                   backgroundSize: `cover`,
-                  display: `inline-block`,
+                  transition: `all 0.25s ease`,
                   margin: `0`,
+                  '&:hover': {
+                    transform: `scale(1.4) rotate(-5deg)`
+                  }
                 })}
               />
+              </figure>
               <article css={css({
                   mt: 1,
                   position: `relative`,
