@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Blogteo`,
     author: `borteo`,
-    description: `Pensieri di un programmatore che lavora in remoto e vive all'estero`,
+    description: `Pensieri di un programmatore che lavora in remoto e vive allʼestero`,
     social: [
       {
         name: `twitter`,

@@ -17,6 +17,7 @@ export default ({ children, ...props }) => (
         }
       })}
     />
+    {/* Yellow bar on top */}
     <div css={css({
       width: `100%`,
       position: `fixed`,
@@ -24,19 +25,18 @@ export default ({ children, ...props }) => (
       backgroundColor: `backgroundSecondary`,
       zIndex: `-1`,
     })}/>
-    <Header {...props} />
-    <div>
+    
+      <Header {...props} />
       <div
         css={css({
           maxWidth: `container`,
-          mx: `1em`,
+          margin: `0 auto`,
           px: [1, 3],
           py: [3, 4],
         })}
       >
         {children}
       </div>
-    </div>
   </Styled.root>
 )
   

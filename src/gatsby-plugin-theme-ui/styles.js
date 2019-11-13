@@ -34,6 +34,12 @@ export default {
     backgroundColor: `link`,
     textDecoration: `none`,
     boxShadow: `5px 0 0 rgba(249, 226, 84, .6), -5px 0 0 rgba(249, 226, 84, .6)`,
+    transition: `all 0.25s ease-out`,
+    "&:hover": {
+      backgroundColor: `linkHover`,
+      boxShadow: `10px 0 0 rgba(249, 226, 84, .90), -10px 0 0 rgba(249, 226, 84, .90)`,
+
+    }
   },
   hr: {
     borderColor: `muted`,

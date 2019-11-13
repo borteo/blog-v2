@@ -31,15 +31,15 @@ const Posts = ({ location, posts, siteTitle, siteDescription, socialLinks }) => 
               // use arrays for mobile-first responsive styles
               gridTemplateColumns: [
                 'auto',
-                '125px 80%',
-                '125px 100%',
+                '150px 0.75fr',
+                '150px 1fr',
               ],
               gridTemplateRows: ['160px', '200px'],
             })}>
               <figure
                 css={css({
-                  width: [`100%`, `125px`],
-                  height: [`200px`, `125px`],
+                  width: [`100%`, `150px`],
+                  height: [`200px`, `150px`],
                   overflow: `hidden`,
                   margin: `0`,
                 })}
@@ -78,7 +78,9 @@ const Posts = ({ location, posts, siteTitle, siteDescription, socialLinks }) => 
                     {title}
                   </Styled.a>
                 </Styled.h2>
-                <Styled.p css={css({color: 'secondary', fontSize: [17, 19, 20]})}>{node.subtitle}</Styled.p>
+                <Styled.h3 css={css({mt: 2, color: 'secondary', fontSize: [17, 19, 21], fontWeight: `300`})}>
+                  {node.subtitle}
+                </Styled.h3>
               </article>
             </Styled.div>
             </AniLink>

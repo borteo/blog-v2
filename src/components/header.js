@@ -6,20 +6,32 @@ import { css, Styled } from "theme-ui"
 
 const rootPath = `${__PATH_PREFIX__}/`
 
-const Divider = () => {
-  return (
-    <div css={{
-      width: '170px',
-      height: '7px',
-      background: '#333',
-      margin: '1.5em 0 1.75em 0',
-      transition: `width 0.25s linear`,
-      '&:hover': {
-        width: '301px',
-      }
-    }}/>  
-  )
-}
+const Divider = () => (
+  <div css={{
+    width: '33%',
+    height: '7px',
+    background: '#333',
+    margin: '1.5em auto 1.75em auto',
+    transition: `width 0.25s linear`,
+    '&:hover': {
+      width: '50%',
+    }
+  }}/>
+)
+
+const Oblique = () => (
+  <div css={css({
+    width: `100%`,
+    height: `60px`,
+    backgroundColor: `backgroundSecondary`,
+    position: `absolute`,
+    left: `0`,
+    right: `0`,
+    marginTop: `-18px`,
+    transform: `skew(4deg, 2deg)`,
+  })}/>
+)
+
 
 const Title = ({ title, description, location }) => {
   if (location.pathname !== rootPath) {
@@ -47,6 +59,7 @@ const Title = ({ title, description, location }) => {
           fontSize: [70, 102, 150],
           textTransform: `uppercase`,
           letterSpacing: `0.05em`,
+          textAlign: `center`,
         })}
       >
         <Styled.a
@@ -65,11 +78,13 @@ const Title = ({ title, description, location }) => {
       <Styled.h2
         css={css({
           color: 'heading',
-          fontSize: [25, 30, 43]
+          fontSize: [25, 30, 43],
+          textAlign: `center`
         })}
       >
         {description}
       </Styled.h2>
+      <Oblique />
     </Fragment>
   )
 
@@ -91,7 +106,7 @@ export default ({ children, title, description, ...props }) => {
       <div
         css={css({
           maxWidth: `container`,
-          mx: `1em`,
+          m: `2em auto`,
           px: [1, 3],
           pt: 4,
         })}

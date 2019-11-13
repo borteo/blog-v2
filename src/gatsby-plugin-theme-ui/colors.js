@@ -18,6 +18,7 @@ export default {
   primary: black,
   secondary: black80,
   link: `rgba(249, 226, 84, .6)`,
+  linkHover: `rgba(249, 226, 84, .9)`,
   muted: lightGray,
   highlight: opaqueLightYellow,
   prism: {
