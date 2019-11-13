@@ -1,13 +1,13 @@
 {
   "name": "blog-v2",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Borteo Blog version 2",
   "main": "index.js",
   "keywords": [
     "gatsby",
-    "gatsby-theme",
     "react",
-    "blog"
+    "blog",
+    "theme-ui"
   ],
   "license": "MIT",
   "repository": {
