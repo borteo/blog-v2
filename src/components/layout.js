@@ -17,15 +17,6 @@ export default ({ children, ...props }) => (
         }
       })}
     />
-    {/* Yellow bar on top */}
-    <div css={css({
-      width: `100%`,
-      position: `fixed`,
-      height: `20px`,
-      backgroundColor: `backgroundSecondary`,
-      zIndex: `-1`,
-    })}/>
-    
       <Header {...props} />
       <div
         css={css({

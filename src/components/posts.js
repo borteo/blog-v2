@@ -34,7 +34,13 @@ const Posts = ({ location, posts, siteTitle, siteDescription, socialLinks }) => 
                 '150px 0.75fr',
                 '150px 1fr',
               ],
-              gridTemplateRows: ['160px', '200px'],
+              mb: 30,
+              mt: 10,
+              border: `10px solid transparent`,
+              transition: `all .42s cubic-bezier(.165,.84,.44,1)`,
+              '&:hover': {
+                boxShadow: `0 10px 50px 0px rgba(0,0,0, .15)`,
+              }
             })}>
               <figure
                 css={css({
@@ -42,23 +48,11 @@ const Posts = ({ location, posts, siteTitle, siteDescription, socialLinks }) => 
                   height: [`200px`, `150px`],
                   overflow: `hidden`,
                   margin: `0`,
-                })}
-              > 
-              <Styled.div 
-                css={css({
-                  width: `100%`,
-                  height: `100%`,
                   background: `url("${node.cover}") top left no-repeat`,
                   backgroundPosition: `center`, 
                   backgroundSize: `cover`,
-                  transition: `all 0.25s ease`,
-                  margin: `0`,
-                  '&:hover': {
-                    transform: `scale(1.4) rotate(-5deg)`
-                  }
                 })}
               />
-              </figure>
               <article css={css({
                   mt: 1,
                   position: `relative`,

@@ -1,35 +1,20 @@
-import React, { Fragment } from "react"
+import React from "react"
 import { Link } from "gatsby"
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { css, Styled } from "theme-ui"
 // import { css, useColorMode, Styled } from "theme-ui"
+import curve from "../../assets/curve.svg"
 
 const rootPath = `${__PATH_PREFIX__}/`
 
-const Divider = () => (
-  <div css={{
-    width: '33%',
-    height: '7px',
-    background: '#333',
-    margin: '1.5em auto 1.75em auto',
-    transition: `width 0.25s linear`,
-    '&:hover': {
-      width: '50%',
-    }
-  }}/>
-)
-
-const Oblique = () => (
-  <div css={css({
-    width: `100%`,
-    height: `60px`,
-    backgroundColor: `backgroundSecondary`,
+const Mask = () => (
+  <img css={{
+    width: '100%',
     position: `absolute`,
-    left: `0`,
-    right: `0`,
-    marginTop: `-18px`,
-    transform: `skew(4deg, 2deg)`,
-  })}/>
+    bottom: `-0.5em`,
+    zIndex: `-1`,
+  }}
+  src={curve} />
 )
 
 
@@ -39,27 +24,35 @@ const Title = ({ title, description, location }) => {
       <Styled.a
         as={AniLink}
         fade
-        duration={0.5} 
-      css={{
-        color: `inherit`,
-        boxShadow: `none`,
-        backgroundColor: `transparent`,
-      }}
-      to={`/`}
+        duration={0.5}
+        css={{
+          position: `absolute`,
+          top: `1em`,
+          backgroundColor: `transparent`,
+          boxShadow: `none`,
+          '&:hover': {
+            backgroundColor: `transparent`,
+            boxShadow: `none`
+          }
+        }}
+        to={`/`}
       >
-        {title}
+        <Styled.h3 description="Torna all'indice">
+          {title}
+        </Styled.h3>
       </Styled.a>
     )
   }
   return (
-    <Fragment>
+    <>
       <Styled.h1
         css={css({
           my: 0,
-          fontSize: [70, 102, 150],
+          fontSize: [90, 102, 150],
           textTransform: `uppercase`,
           letterSpacing: `0.05em`,
           textAlign: `center`,
+          transition: `all 0.25s linear`,
         })}
       >
         <Styled.a
@@ -74,18 +67,19 @@ const Title = ({ title, description, location }) => {
           {title}
         </Styled.a>
       </Styled.h1>
-      <Divider />
       <Styled.h2
         css={css({
           color: 'heading',
           fontSize: [25, 30, 43],
-          textAlign: `center`
+          textAlign: `center`,
+          mt: [2, 3],
+          mx: [3, 1],
+          mb: 4,
         })}
       >
         {description}
       </Styled.h2>
-      <Oblique />
-    </Fragment>
+    </>
   )
 
 }
@@ -102,13 +96,14 @@ export default ({ children, title, description, ...props }) => {
       backgroundColor: `backgroundSecondary`,
       py: 2,
       zIndex: `0`,
+      position: `relative`,
     })}>
       <div
         css={css({
           maxWidth: `container`,
           m: `2em auto`,
           px: [1, 3],
-          pt: 4,
+          pt: 3,
         })}
       >
         <div
@@ -134,6 +129,7 @@ export default ({ children, title, description, ...props }) => {
         </div>
         {/* {props.location.pathname === rootPath && <Bio />} */}
       </div>
+      <Mask />
     </header>
   )
 }
