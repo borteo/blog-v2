@@ -48,7 +48,7 @@ const Title = ({ title, description, location }) => {
       <Styled.h1
         css={css({
           my: 0,
-          fontSize: [90, 102, 150],
+          fontSize: [70, 102, 150],
           textTransform: `uppercase`,
           letterSpacing: `0.05em`,
           textAlign: `center`,
@@ -72,9 +72,9 @@ const Title = ({ title, description, location }) => {
           color: 'heading',
           fontSize: [25, 30, 43],
           textAlign: `center`,
-          mt: [2, 3],
+          mt: [3, 2],
           mx: [3, 1],
-          mb: 4,
+          mb: [1, 5],
         })}
       >
         {description}
