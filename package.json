@@ -1,6 +1,6 @@
 {
   "name": "blog-v2",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Borteo Blog version 2",
   "main": "index.js",
   "keywords": [
